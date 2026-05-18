@@ -99,7 +99,7 @@ async function handleSubmit() {
     btn.disabled = true;
 
     try {
-        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzizhJtL-iTsSCpwBYY5ziijEXBsn6kjuJ_22WtjwrO9Q9-STydBFSD_8ofhlUXDMw4gA/exec';
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby0_h34cczm0N1RBv_UMFKxAfMpQ6pqmu7LW2XuSUnb20W3n74H5rE4J98BYJmvzMPITg/exec';
 
         const res = await fetch(APPS_SCRIPT_URL, {
             method: 'POST',
@@ -171,3 +171,77 @@ function validateForm() {
 
 /* init budget display */
 updateBudget(1000);
+
+// Tự động focus vào input khi chọn Other
+const channelsOtherCheckbox = document.getElementById('channels-other-checkbox');
+const channelsOtherInput = document.getElementById('channels-other-input');
+
+if (channelsOtherCheckbox && channelsOtherInput) {
+    channelsOtherCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+            setTimeout(() => channelsOtherInput.focus(), 100);
+        } else {
+            channelsOtherInput.value = '';
+        }
+    });
+}
+
+
+
+
+/* =========================================
+   REQUIRE INPUT WHEN "OTHER" IS SELECTED
+   ========================================= */
+
+function setupOtherField(checkboxId, inputId) {
+    const checkbox = document.getElementById(checkboxId);
+    const input = document.getElementById(inputId);
+
+    if (!checkbox || !input) return;
+
+    function updateState() {
+        if (checkbox.checked) {
+            input.required = true;
+            input.disabled = false;
+
+            // Focus vào input
+            setTimeout(() => input.focus(), 50);
+        } else {
+            input.required = false;
+            input.disabled = false; // giữ enabled để vẫn submit được nếu cần
+            input.value = '';
+            input.setCustomValidity('');
+        }
+    }
+
+    // Khi user gõ thì bỏ thông báo lỗi
+    input.addEventListener('input', function () {
+        input.setCustomValidity('');
+    });
+
+    // Khi submit mà chưa nhập
+    input.addEventListener('invalid', function () {
+        if (checkbox.checked && !input.value.trim()) {
+            input.setCustomValidity('Please specify.');
+        } else {
+            input.setCustomValidity('');
+        }
+    });
+
+    checkbox.addEventListener('change', updateState);
+
+    // Khởi tạo trạng thái ban đầu
+    updateState();
+}
+
+/* =========================================
+   REGISTER ALL OTHER FIELDS
+   ========================================= */
+
+setupOtherField('channels-other-checkbox', 'channels-other-input');
+setupOtherField('website-pages-other-checkbox', 'website-pages-other-input');
+setupOtherField('kpis-other-checkbox', 'kpis-other-input');
+setupOtherField('brand-assets-other-checkbox', 'brand-assets-other-input');
+setupOtherField('current-flows-other-checkbox', 'current-flows-other-input');
+setupOtherField('ig-best-content-other-checkbox', 'ig-best-content-other-input');
+setupOtherField('b2b-concern-other-radio', 'b2b-concern-other-input');

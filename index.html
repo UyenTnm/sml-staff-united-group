@@ -53,13 +53,23 @@
                     </div>
 
                     <div class="question">
-                        <label class="question-label">Your full name <span
-                                class="required">*</span></label>
-                        <input
-                            type="text"
-                            name="full_name"
-                            placeholder="Stacey Bafi-Yeboa"
-                            required />
+                        <label class="question-label">
+                            Your full name <span class="required">*</span>
+                        </label>
+
+                        <div class="two-col-fields">
+                            <input
+                                type="text"
+                                name="first_name"
+                                placeholder="First name"
+                                required />
+
+                            <input
+                                type="text"
+                                name="last_name"
+                                placeholder="Last name"
+                                required />
+                        </div>
                     </div>
 
                     <div class="question">
@@ -76,7 +86,7 @@
 
                     <div class="question">
                         <label class="question-label">
-                            WhatsApp or phone number
+                            WhatsApp number
                             <span class="required">*</span>
                         </label>
                         <input
@@ -300,27 +310,82 @@
                             placeholder="@iamstaceymartin   @staceymartinlifestyle" />
                     </div>
                     <div class="question">
-                        <label class="question-label">Which channels do you currently use
-                            actively?</label>
+                        <label class="question-label">
+                            Which channels do you currently use actively?
+                        </label>
+
                         <div class="options-grid">
-                            <label class="option-item"><input type="checkbox" name="channels"
-                                    value="instagram"><div><div
-                                        class="option-label">Instagram</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="channels"
-                                    value="youtube"><div><div class="option-label">YouTube</div><div
-                                        class="option-sub">Have but not using</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="channels"
-                                    value="email"><div><div
-                                        class="option-label">Email</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="channels"
-                                    value="tiktok"><div><div
-                                        class="option-label">TikTok</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="channels"
-                                    value="facebook"><div><div
-                                        class="option-label">Facebook</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="channels"
-                                    value="linkedin"><div><div
-                                        class="option-label">LinkedIn</div></div></label>
+                            <label class="option-item">
+                                <input type="checkbox" name="channels" value="instagram">
+                                <div>
+                                    <div class="option-label">Instagram</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="channels" value="youtube">
+                                <div>
+                                    <div class="option-label">YouTube</div>
+                                    <div class="option-sub">Have but not using</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="channels" value="email">
+                                <div>
+                                    <div class="option-label">Email</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="channels" value="tiktok">
+                                <div>
+                                    <div class="option-label">TikTok</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="channels" value="facebook">
+                                <div>
+                                    <div class="option-label">Facebook</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="channels" value="linkedin">
+                                <div>
+                                    <div class="option-label">LinkedIn</div>
+                                </div>
+                            </label>
+
+                            <!-- Other + inline input như Google Form -->
+                            <label class="option-item option-item-inline-other">
+                                <input
+                                    type="checkbox"
+                                    name="channels"
+                                    value="other"
+                                    id="channels-other-checkbox" />
+
+                                <div class="inline-other-content">
+                                    <span class="option-label">Other:</span>
+
+                                    <input
+                                        type="text"
+                                        name="channels_other"
+                                        id="channels-other-input"
+                                        class="inline-other-input"
+                                        placeholder />
+                                </div>
+                            </label>
+                        </div>
+
+                        <div
+                            id="channels-other-field"
+                            style="display: none; margin-top: 16px;">
+                            <input
+                                type="text"
+                                name="channels_other"
+                                placeholder="Please specify other channels" />
                         </div>
                     </div>
                     <div class="question">
@@ -403,7 +468,8 @@
                             style="min-height:80px;" required></textarea>
                     </div>
                     <div class="question">
-                        <label class="question-label">If we could send one email to your full list
+                        <label class="question-label">If we could send one email to your full email
+                            list
                             this week,
                             what would it say?</label>
                         <div class="question-hint">Not polished — just the raw idea. What would you
@@ -569,6 +635,7 @@
                             placeholder="e.g. 200+ studio partners, a growing DTC customer base, investor conversations underway..."
                             required></textarea>
                     </div>
+
                     <div class="question">
                         <label class="question-label">Which KPIs matter most to you right
                             now?</label>
@@ -607,8 +674,29 @@
                                     value="new_customers"><div><div class="option-label">New
                                         customers per
                                         month</div></div></label>
+                            <!-- Other -->
+                            <label
+                                class="option-item option-item-inline-other option-item-other-inline">
+                                <input
+                                    type="checkbox"
+                                    name="kpis"
+                                    value="other"
+                                    id="kpis-other-checkbox" />
+
+                                <div class="inline-other-content">
+                                    <span class="option-label">Other:</span>
+
+                                    <input
+                                        type="text"
+                                        name="kpis_other"
+                                        id="kpis-other-input"
+                                        class="inline-other-input"
+                                        placeholder />
+                                </div>
+                            </label>
                         </div>
                     </div>
+
                     <div class="question">
                         <label class="question-label">Do you have any existing revenue benchmarks to
                             share?</label>
@@ -670,33 +758,72 @@
                             style="min-height:80px;" required></textarea>
                     </div>
                     <div class="question">
-                        <label class="question-label">What pages does your website currently
-                            have?</label>
+                        <label class="question-label">
+                            What pages does your website currently have?
+                        </label>
+
                         <div class="options-grid">
-                            <label class="option-item"><input type="checkbox" name="website_pages"
-                                    value="home"><div><div
-                                        class="option-label">Homepage</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="website_pages"
-                                    value="shop"><div><div class="option-label">Shop /
-                                        Products</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="website_pages"
-                                    value="about"><div><div class="option-label">About /
-                                        Story</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="website_pages"
-                                    value="blog"><div><div class="option-label">Blog /
-                                        Journal</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="website_pages"
-                                    value="contact"><div><div
-                                        class="option-label">Contact</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="website_pages"
-                                    value="wholesale"><div><div class="option-label">Wholesale / B2B
-                                        page</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="website_pages"
-                                    value="events"><div><div class="option-label">Events /
-                                        Pop-ups</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="website_pages"
-                                    value="wellness"><div><div class="option-label">Wellness /
-                                        Movement</div></div></label>
+                            <label class="option-item">
+                                <input type="checkbox" name="website_pages" value="home">
+                                <div><div class="option-label">Homepage</div></div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="website_pages" value="shop">
+                                <div><div class="option-label">Shop / Products</div></div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="website_pages" value="about">
+                                <div><div class="option-label">About / Story</div></div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="website_pages" value="blog">
+                                <div><div class="option-label">Blog / Journal</div></div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="website_pages" value="contact">
+                                <div><div class="option-label">Contact</div></div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="website_pages" value="wholesale">
+                                <div><div class="option-label">Wholesale / B2B page</div></div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="website_pages" value="events">
+                                <div><div class="option-label">Events / Pop-ups</div></div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="website_pages" value="wellness">
+                                <div><div class="option-label">Wellness / Movement</div></div>
+                            </label>
+
+                            <!-- Other -->
+                            <!-- Other placed in column 3, row 3 -->
+                            <label
+                                class="option-item option-item-inline-other option-item-other-inline">
+                                <input
+                                    type="checkbox"
+                                    name="website_pages"
+                                    value="other"
+                                    id="website-pages-other-checkbox" />
+
+                                <div class="inline-other-content">
+                                    <span class="option-label">Other:</span>
+
+                                    <input
+                                        type="text"
+                                        name="website_pages_other"
+                                        id="website-pages-other-input"
+                                        class="inline-other-input"
+                                        placeholder />
+                                </div>
+                            </label>
                         </div>
                     </div>
                     <div class="question">
@@ -710,31 +837,67 @@
                             required></textarea>
                     </div>
                     <div class="question">
-                        <label class="question-label">Do you have brand photography and video assets
-                            available?</label>
+                        <label class="question-label">
+                            Do you have brand photography and video assets available?
+                        </label>
+
                         <div class="options-grid">
-                            <label class="option-item"><input type="checkbox" name="brand_assets"
-                                    value="product_photos"><div><div class="option-label">Product
-                                        photos</div><div
-                                        class="option-sub">On white / lifestyle</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="brand_assets"
-                                    value="lifestyle_photos"><div><div
-                                        class="option-label">Lifestyle / editorial
-                                        photos</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="brand_assets"
-                                    value="video_content"><div><div class="option-label">Video
-                                        content /
-                                        Reels</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="brand_assets"
-                                    value="logos_fonts"><div><div class="option-label">Logos & brand
-                                        fonts</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="brand_assets"
-                                    value="canva_templates"><div><div class="option-label">Canva
-                                        templates</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="brand_assets"
-                                    value="nothing_ready"><div><div class="option-label">Not much
-                                        ready
-                                        yet</div></div></label>
+                            <label class="option-item">
+                                <input type="checkbox" name="brand_assets" value="product_photos">
+                                <div>
+                                    <div class="option-label">Product photos</div>
+                                    <div class="option-sub">On white / lifestyle</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="brand_assets" value="lifestyle_photos">
+                                <div>
+                                    <div class="option-label">Lifestyle / editorial photos</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="brand_assets" value="video_content">
+                                <div>
+                                    <div class="option-label">Video content / Reels</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="brand_assets" value="logos_fonts">
+                                <div>
+                                    <div class="option-label">Logos &amp; brand fonts</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="brand_assets" value="canva_templates">
+                                <div>
+                                    <div class="option-label">Canva templates</div>
+                                </div>
+                            </label>
+
+                            <!-- Thay "Not much ready yet" bằng Other -->
+                            <label
+                                class="option-item option-item-inline-other option-item-other-inline">
+                                <input
+                                    type="checkbox"
+                                    name="brand_assets"
+                                    value="other"
+                                    id="brand-assets-other-checkbox" />
+
+                                <div class="inline-other-content">
+                                    <span class="option-label">Other:</span>
+
+                                    <input
+                                        type="text"
+                                        name="brand_assets_other"
+                                        id="brand-assets-other-input"
+                                        class="inline-other-input"
+                                        placeholder />
+                                </div>
+                            </label>
                         </div>
                     </div>
 
@@ -744,28 +907,66 @@
                             MARKETING</label>
                     </div>
                     <div class="question">
-                        <label class="question-label">What email flows do you currently have
-                            active?</label>
+                        <label class="question-label">
+                            What email flows do you currently have active?
+                        </label>
+
                         <div class="options-grid">
-                            <label class="option-item"><input type="checkbox" name="current_flows"
-                                    value="welcome"><div><div class="option-label">Welcome
-                                        series</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="current_flows"
-                                    value="abandoned_cart"><div><div class="option-label">Abandoned
-                                        cart</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="current_flows"
-                                    value="post_purchase"><div><div
-                                        class="option-label">Post-purchase
-                                        follow-up</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="current_flows"
-                                    value="win_back"><div><div class="option-label">Win-back /
-                                        re-engagement</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="current_flows"
-                                    value="none"><div><div class="option-label">None
-                                        currently</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="current_flows"
-                                    value="unsure_flows"><div><div class="option-label">Not
-                                        sure</div></div></label>
+                            <label class="option-item">
+                                <input type="checkbox" name="current_flows" value="welcome">
+                                <div>
+                                    <div class="option-label">Welcome series</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="current_flows" value="abandoned_cart">
+                                <div>
+                                    <div class="option-label">Abandoned cart</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="current_flows" value="post_purchase">
+                                <div>
+                                    <div class="option-label">Post-purchase follow-up</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="current_flows" value="win_back">
+                                <div>
+                                    <div class="option-label">Win-back / re-engagement</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="current_flows" value="none">
+                                <div>
+                                    <div class="option-label">None currently</div>
+                                </div>
+                            </label>
+
+                            <!-- Thay "Not sure" bằng Other -->
+                            <label
+                                class="option-item option-item-inline-other option-item-other-inline">
+                                <input
+                                    type="checkbox"
+                                    name="current_flows"
+                                    value="other"
+                                    id="current-flows-other-checkbox" />
+
+                                <div class="inline-other-content">
+                                    <span class="option-label">Other:</span>
+
+                                    <input
+                                        type="text"
+                                        name="current_flows_other"
+                                        id="current-flows-other-input"
+                                        class="inline-other-input"
+                                        placeholder />
+                                </div>
+                            </label>
                         </div>
                     </div>
                     <div class="question">
@@ -813,31 +1014,88 @@
                             style="font-size:12px;color:var(--blue);text-transform:uppercase;letter-spacing:0.1em;font-weight:500;">INSTAGRAM</label>
                     </div>
                     <div class="question">
-                        <label class="question-label">What content performs best on your Instagram
-                            right
-                            now?</label>
+                        <label class="question-label">
+                            What content performs best on your Instagram right now?
+                        </label>
+
                         <div class="options-grid">
-                            <label class="option-item"><input type="checkbox" name="ig_best_content"
-                                    value="reels"><div><div class="option-label">Reels /
-                                        video</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="ig_best_content"
-                                    value="personal_stories"><div><div class="option-label">Personal
-                                        stories &
-                                        captions</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="ig_best_content"
-                                    value="product_posts"><div><div class="option-label">Product
-                                        posts</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="ig_best_content"
-                                    value="wellness_tips"><div><div class="option-label">Wellness /
-                                        lifestyle
-                                        tips</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="ig_best_content"
-                                    value="behind_scenes"><div><div class="option-label">Behind the
-                                        scenes</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="ig_best_content"
-                                    value="collaborations"><div><div
-                                        class="option-label">Collaborations /
-                                        features</div></div></label>
+                            <label class="option-item">
+                                <input type="checkbox" name="ig_best_content" value="reels">
+                                <div>
+                                    <div class="option-label">Reels / video</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input
+                                    type="checkbox"
+                                    name="ig_best_content"
+                                    value="personal_stories">
+                                <div>
+                                    <div class="option-label">Personal stories &amp; captions</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input
+                                    type="checkbox"
+                                    name="ig_best_content"
+                                    value="product_posts">
+                                <div>
+                                    <div class="option-label">Product posts</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input
+                                    type="checkbox"
+                                    name="ig_best_content"
+                                    value="wellness_tips">
+                                <div>
+                                    <div class="option-label">Wellness / lifestyle tips</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input
+                                    type="checkbox"
+                                    name="ig_best_content"
+                                    value="behind_scenes">
+                                <div>
+                                    <div class="option-label">Behind the scenes</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input
+                                    type="checkbox"
+                                    name="ig_best_content"
+                                    value="collaborations">
+                                <div>
+                                    <div class="option-label">Collaborations / features</div>
+                                </div>
+                            </label>
+
+                            <!-- Other -->
+
+                            <label class="option-item option-item-inline-other">
+                                <input
+                                    type="checkbox"
+                                    name="ig_best_content"
+                                    value="other"
+                                    id="ig-best-content-other-checkbox" />
+
+                                <div class="inline-other-content">
+                                    <span class="option-label">Other:</span>
+
+                                    <input
+                                        type="text"
+                                        name="ig_best_content_other"
+                                        id="ig-best-content-other-input"
+                                        class="inline-other-input"
+                                        placeholder />
+                                </div>
+                            </label>
                         </div>
                     </div>
                     <div class="question">
@@ -929,9 +1187,24 @@
                                     value="pricing"><div><div class="option-label">Pricing not being
                                         competitive
                                         enough</div></div></label>
-                            <label class="option-item"><input type="radio" name="b2b_concern"
-                                    value="other_b2b"><div><div class="option-label">Something
-                                        else</div></div></label>
+                            <label class="option-item">
+                                <input
+                                    type="radio"
+                                    name="b2b_concern"
+                                    value="other"
+                                    id="b2b-concern-other-radio" />
+
+                                <div class="inline-other-content">
+                                    <span class="option-label">Other:</span>
+
+                                    <input
+                                        type="text"
+                                        name="b2b_concern_other"
+                                        id="b2b-concern-other-input"
+                                        class="inline-other-input"
+                                        placeholder />
+                                </div>
+                            </label>
                         </div>
                     </div>
                     <div class="question">

@@ -546,3 +546,567 @@ input[type="range"]::-webkit-slider-thumb {
     padding: 28px 24px;
   }
 }
+
+/* Thêm vào assets/css/style.css */
+/* Thêm hoặc thay thế trong assets/css/style.css */
+.two-col-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+.two-col-fields input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .two-col-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*  */
+
+/* =========================================
+   INLINE "✓ Other: ____________"
+   KHÔNG CÓ KHUNG INPUT
+   ========================================= */
+
+.inline-other-input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+
+  /* Loại bỏ hoàn toàn style mặc định */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(26, 38, 74, 0.18) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  padding: 6px 0 4px !important;
+  margin: 0 !important;
+
+  font: inherit;
+  color: inherit;
+}
+
+/* Placeholder */
+.inline-other-input::placeholder {
+  color: rgba(17, 24, 39, 0.35);
+}
+
+/* Khi focus chỉ đổi màu underline */
+.inline-other-input:focus,
+.inline-other-input:active {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid #1a264a !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Xóa hoàn toàn các hiệu ứng inset/shadow từ CSS global */
+.option-item-inline-other .inline-other-input,
+.option-item-inline-other .inline-other-input:focus,
+.option-item-inline-other .inline-other-input:active {
+  box-shadow: none !important;
+}
+/* =========================================
+   INLINE OTHER = FULL WIDTH (3 COLUMNS)
+   ========================================= */
+
+/* Cho item Other chiếm toàn bộ chiều ngang của grid */
+.option-item-inline-other {
+  grid-column: 1 / -1 !important; /* span toàn bộ 3 cột */
+  width: 100% !important;
+  max-width: none !important;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 18px 24px;
+  box-sizing: border-box;
+}
+
+/* Phần chứa "Other:" và input */
+.inline-other-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Label "Other:" */
+.inline-other-content .option-label {
+  flex-shrink: 0;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Input underline chiếm toàn bộ phần còn lại */
+.inline-other-input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(26, 38, 74, 0.18) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  padding: 6px 0 4px !important;
+  margin: 0 !important;
+
+  font: inherit;
+  color: inherit;
+}
+
+.inline-other-input:focus {
+  border-bottom-color: #1a264a !important;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .option-item-inline-other {
+    grid-column: 1 / -1;
+    padding: 16px 20px;
+    gap: 12px;
+  }
+
+  .inline-other-content {
+    gap: 8px;
+  }
+}
+
+/* =========================================
+   ALIGN "OTHER" CHECKBOX WITH OTHER OPTIONS
+   ========================================= */
+
+/* Item Other chiếm toàn bộ chiều ngang */
+.option-item-inline-other {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  max-width: none !important;
+
+  /* Giữ cùng padding như các .option-item khác */
+  padding: 12px 14px !important;
+  box-sizing: border-box;
+
+  /* Căn checkbox và nội dung giống các option khác */
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Checkbox giữ nguyên kích thước và vị trí */
+.option-item-inline-other > input[type="checkbox"] {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+/* Phần "Other:" + input */
+.inline-other-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  margin-top: 0; /* đảm bảo không bị lệch xuống */
+}
+
+/* Label "Other:" */
+.inline-other-content .option-label {
+  flex-shrink: 0;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Input dạng underline */
+.inline-other-input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(26, 38, 74, 0.18) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  padding: 6px 0 4px !important;
+  margin: 0 !important;
+
+  font: inherit;
+  color: inherit;
+}
+
+.inline-other-input:focus {
+  border-bottom-color: #1a264a !important;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .option-item-inline-other {
+    padding: 12px 14px !important;
+    gap: 10px;
+  }
+
+  .inline-other-content {
+    gap: 8px;
+  }
+}
+/* =========================================
+   PERFECT ALIGNMENT FOR "OTHER"
+   Checkbox thẳng hàng với Instagram/TikTok
+   ========================================= */
+
+/* Other chiếm toàn bộ chiều ngang */
+.option-item-inline-other {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  max-width: none !important;
+
+  /* QUAN TRỌNG: dùng đúng padding như các option-item khác */
+  padding: 12px 14px !important;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center !important; /* căn giữa theo chiều dọc */
+  gap: 10px !important; /* giống option-item */
+
+  min-height: 78px; /* cùng chiều cao với các card khác */
+}
+
+/* Checkbox của Other */
+.option-item-inline-other > input[type="checkbox"] {
+  flex-shrink: 0;
+  margin: 0 !important;
+}
+
+/* Phần "Other:" + input */
+.inline-other-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Label "Other:" */
+.inline-other-content .option-label {
+  flex-shrink: 0;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* Input underline */
+.inline-other-input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(26, 38, 74, 0.18) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  padding: 4px 0 2px !important;
+  margin: 0 !important;
+
+  font: inherit;
+  color: inherit;
+}
+
+.inline-other-input:focus {
+  border-bottom-color: #1a264a !important;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .option-item-inline-other {
+    min-height: auto;
+  }
+}
+
+/* Đặt Other vào ô thứ 9 (cột 3, hàng 3) thay vì full width */
+.option-item-other-inline {
+  grid-column: auto !important; /* không span full width */
+  width: 100% !important;
+  max-width: none !important;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 14px !important;
+  box-sizing: border-box;
+  min-height: 78px; /* bằng chiều cao các card khác */
+}
+
+/* Phần chứa "Other:" + input */
+.option-item-other-inline .inline-other-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Label "Other:" */
+.option-item-other-inline .option-label {
+  flex-shrink: 0;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* Input underline */
+.option-item-other-inline .inline-other-input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(26, 38, 74, 0.18) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  padding: 4px 0 2px !important;
+  margin: 0 !important;
+
+  font: inherit;
+  color: inherit;
+}
+
+.option-item-other-inline .inline-other-input:focus {
+  border-bottom-color: #1a264a !important;
+}
+/* =========================================
+   CHỈ CĂN GIỮA 2 CARD:
+   - Events / Pop-ups
+   - Wellness / Movement
+   ========================================= */
+
+/* Card thứ 7: Events / Pop-ups */
+.options-grid > .option-item:nth-child(7),
+/* Card thứ 8: Wellness / Movement */
+.options-grid > .option-item:nth-child(8) {
+  display: flex;
+  align-items: center !important;
+}
+
+/* Phần text bên trong 2 card này */
+.options-grid > .option-item:nth-child(7) > div,
+.options-grid > .option-item:nth-child(8) > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =========================================
+   FIX: CHANNELS OTHER LAYOUT
+   ========================================= */
+
+/* Chỉ áp dụng cho checkbox Other của phần Channels */
+.option-item-inline-other:has(#channels-other-checkbox) {
+  grid-column: 1 / -1 !important; /* full width */
+  width: 100% !important;
+  max-width: none !important;
+
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+
+  padding: 12px 14px !important;
+  min-height: 78px !important;
+  box-sizing: border-box;
+}
+
+/* Checkbox bên trái */
+.option-item-inline-other:has(#channels-other-checkbox)
+  > input[type="checkbox"] {
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  margin-top: 1px !important;
+}
+
+/* Container chứa "Other:" và input */
+.option-item-inline-other:has(#channels-other-checkbox) .inline-other-content {
+  display: flex !important;
+  flex-direction: row !important; /* QUAN TRỌNG: luôn nằm ngang */
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+
+  flex: 1 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Label "Other:" */
+.option-item-inline-other:has(#channels-other-checkbox)
+  .inline-other-content
+  .option-label {
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+/* Input underline */
+.option-item-inline-other:has(#channels-other-checkbox) .inline-other-input {
+  flex: 1 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(26, 38, 74, 0.18) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  padding: 4px 0 2px !important;
+  margin: 0 !important;
+
+  font: inherit !important;
+  color: inherit !important;
+}
+
+.option-item-inline-other:has(#channels-other-checkbox)
+  .inline-other-input:focus {
+  border-bottom-color: #1a264a !important;
+}
+
+/* Ẩn field cũ bên dưới vì giờ input đã nằm trong card */
+#channels-other-field {
+  display: none !important;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .option-item-inline-other:has(#channels-other-checkbox)
+    .inline-other-content {
+    gap: 8px !important;
+  }
+}
+
+/* =========================================
+   CENTER VERTICALLY:
+   - Logos & brand fonts
+   - Canva templates
+   (Trong section Brand Assets)
+   ========================================= */
+
+/* Item thứ 4: Logos & brand fonts */
+.options-grid > .option-item:nth-child(4),
+/* Item thứ 5: Canva templates */
+.options-grid > .option-item:nth-child(5) {
+  display: flex;
+  align-items: center !important; /* căn giữa theo trục Y */
+}
+
+/* Phần text bên trong 2 card */
+.options-grid > .option-item:nth-child(4) > div,
+.options-grid > .option-item:nth-child(5) > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =========================================
+   FIX IG BEST CONTENT - OTHER POSITION
+   Chỉ áp dụng cho:
+   name="ig_best_content"
+   ========================================= */
+
+.option-item-inline-other:has(#ig-best-content-other-checkbox) {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  max-width: none !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+
+  padding: 12px 14px !important;
+  min-height: 78px !important;
+  box-sizing: border-box;
+}
+
+.option-item-inline-other:has(#ig-best-content-other-checkbox)
+  .inline-other-content {
+  display: flex !important;
+  flex-direction: row !important; /* luôn nằm ngang */
+  align-items: center !important;
+  justify-content: flex-start !important;
+
+  gap: 12px !important;
+  flex: 1 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.option-item-inline-other:has(#ig-best-content-other-checkbox) .option-label {
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.option-item-inline-other:has(#ig-best-content-other-checkbox)
+  .inline-other-input {
+  flex: 1 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
