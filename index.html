@@ -45,44 +45,72 @@
                         <div class="section-number">1</div>
                         <div>
                             <div class="section-title">About You</div>
-                            <div class="section-desc">The basics — so we can set up your files and
-                                address you
-                                properly.</div>
+                            <div class="section-desc">
+                                The basics — so we can set up your files and address you properly.
+                            </div>
                         </div>
                     </div>
 
                     <div class="question">
-                        <label class="question-label">Your full name</label>
-                        <input type="text" name="full_name" placeholder="Stacey Bafi-Yeboa" />
+                        <label class="question-label">Your full name <span
+                                class="required">*</span></label>
+                        <input
+                            type="text"
+                            name="full_name"
+                            placeholder="Stacey Bafi-Yeboa"
+                            required />
                     </div>
+
                     <div class="question">
-                        <label class="question-label">Best email address for our work
-                            together</label>
-                        <input type="email" name="email"
-                            placeholder="stacey@staceymartinlifestyle.com" />
+                        <label class="question-label">
+                            Best email address for our work together
+                            <span class="required">*</span>
+                        </label>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="stacey@staceymartinlifestyle.com"
+                            required />
                     </div>
+
                     <div class="question">
-                        <label class="question-label">WhatsApp or phone number</label>
-                        <input type="text" name="phone" placeholder="+1 (613) ..." />
+                        <label class="question-label">
+                            WhatsApp or phone number
+                            <span class="required">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            name="phone"
+                            placeholder="+1 (613) ..."
+                            required />
                     </div>
+
                     <div class="question">
                         <label class="question-label">Preferred way to communicate with us</label>
                         <div class="question-hint">Pick all that apply</div>
                         <div class="options-grid two-col">
-                            <label class="option-item"><input type="checkbox" name="comms"
-                                    value="whatsapp"><div><div
-                                        class="option-label">WhatsApp</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="comms"
-                                    value="email"><div><div
-                                        class="option-label">Email</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="comms"
-                                    value="voice_note"><div><div class="option-label">Voice
-                                        notes</div><div
-                                        class="option-sub">We transcribe & use
-                                        them</div></div></label>
-                            <label class="option-item"><input type="checkbox" name="comms"
-                                    value="video_call"><div><div class="option-label">Video
-                                        call</div></div></label>
+                            <label class="option-item">
+                                <input type="checkbox" name="comms" value="whatsapp" />
+                                <div><div class="option-label">WhatsApp</div></div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="comms" value="email" />
+                                <div><div class="option-label">Email</div></div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="comms" value="voice_note" />
+                                <div>
+                                    <div class="option-label">Voice notes</div>
+                                    <div class="option-sub">We transcribe & use them</div>
+                                </div>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="comms" value="video_call" />
+                                <div><div class="option-label">Video call</div></div>
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -107,14 +135,15 @@
                             women? What
                             does it stand for?</div>
                         <textarea name="brand_essence"
-                            placeholder="For me it's about redefining what wellness looks like..."></textarea>
+                            placeholder="For me it's about redefining what wellness looks like..."
+                            required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What makes your brand different from every
                             other
                             eco-wellness brand out there?</label>
                         <textarea name="brand_difference"
-                            placeholder="My story, my body, my community..."></textarea>
+                            placeholder="My story, my body, my community..." required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">Who is your ideal customer — describe her as a
@@ -143,7 +172,7 @@
                             communicates the way you want to.</div>
                         <textarea name="brand_admire"
                             placeholder="I love how [brand] makes you feel..."
-                            style="min-height:80px;"></textarea>
+                            style="min-height:80px;" required></textarea>
                     </div>
                 </div>
 
@@ -167,7 +196,7 @@
                             what makes
                             it eco-conscious.</div>
                         <textarea name="signature_wrap_pitch"
-                            placeholder="It feels like you're getting a hug..."></textarea>
+                            placeholder="It feels like you're getting a hug..." required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What is the wholesale price per unit, and the
@@ -206,7 +235,7 @@
                             with?</label>
                         <textarea name="warm_studios"
                             placeholder="Yes — I've sold to a few in Ottawa..."
-                            style="min-height:80px;"></textarea>
+                            style="min-height:80px;" required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What does success look like for this campaign
@@ -217,7 +246,7 @@
                             revenue?</div>
                         <textarea name="campaign_success"
                             placeholder="I want to reach 400 studios and have at least 50 confirmed orders..."
-                            style="min-height:80px;"></textarea>
+                            style="min-height:80px;" required></textarea>
                     </div>
                 </div>
 
@@ -336,7 +365,8 @@
                             your actual
                             words?</div>
                         <textarea name="boutique_opener"
-                            placeholder="Hi, welcome! Have you been here before?..."></textarea>
+                            placeholder="Hi, welcome! Have you been here before?..."
+                            required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">You mentioned you speak differently to
@@ -346,7 +376,8 @@
                             Pilates
                             instructor vs. a woman who's never done Pilates.</div>
                         <textarea name="audience_segmentation_voice"
-                            placeholder="For someone who does Pilates I'd say... For someone new to wellness I'd say..."></textarea>
+                            placeholder="For someone who does Pilates I'd say... For someone new to wellness I'd say..."
+                            required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What phrases or words do you NEVER want to
@@ -357,7 +388,7 @@
                             past agencies used that you hated.</div>
                         <textarea name="brand_dont"
                             placeholder="I hate when brands say 'limited time only' or 'treat yourself'..."
-                            style="min-height:80px;"></textarea>
+                            style="min-height:80px;" required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What existing content are you most proud of —
@@ -368,7 +399,7 @@
                             best.</div>
                         <textarea name="best_content"
                             placeholder="This Reel got amazing feedback: [link]... or I wrote a caption once that said..."
-                            style="min-height:80px;"></textarea>
+                            style="min-height:80px;" required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">If we could send one email to your full list
@@ -378,7 +409,8 @@
                             want them to
                             feel or do?</div>
                         <textarea name="dream_email"
-                            placeholder="I'd want them to know the Signature Wrap is coming and feel like..."></textarea>
+                            placeholder="I'd want them to know the Signature Wrap is coming and feel like..."
+                            required></textarea>
                     </div>
                 </div>
 
@@ -486,10 +518,10 @@
                                         possible</div></div></label>
                             <label class="option-item"><input type="radio" name="start_timeline"
                                     value="june"><div><div class="option-label">Early June
-                                        2025</div></div></label>
+                                        2026</div></div></label>
                             <label class="option-item"><input type="radio" name="start_timeline"
                                     value="mid_june"><div><div class="option-label">Mid-June
-                                        2025</div></div></label>
+                                        2026</div></div></label>
                             <label class="option-item"><input type="radio" name="start_timeline"
                                     value="flexible"><div><div class="option-label">Flexible — when
                                         it's
@@ -517,12 +549,14 @@
                             number of
                             orders, studios reached.</div>
                         <textarea name="goal_3mo"
-                            placeholder="e.g. Close wholesale orders with at least 40 Pilates studios and generate CAD $X in revenue from the Signature Wrap™ campaign"></textarea>
+                            placeholder="e.g. Close wholesale orders with at least 40 Pilates studios and generate CAD $X in revenue from the Signature Wrap™ campaign"
+                            required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What is your 6-month goal?</label>
                         <textarea name="goal_6mo"
-                            placeholder="e.g. Have a fully functional digital ecosystem, consistent monthly sales, and a second product launching..."></textarea>
+                            placeholder="e.g. Have a fully functional digital ecosystem, consistent monthly sales, and a second product launching..."
+                            required required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What is your 12-month vision for the
@@ -531,7 +565,8 @@
                             Lifestyle to
                             be in a year?</div>
                         <textarea name="goal_12mo"
-                            placeholder="e.g. 200+ studio partners, a growing DTC customer base, investor conversations underway..."></textarea>
+                            placeholder="e.g. 200+ studio partners, a growing DTC customer base, investor conversations underway..."
+                            required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">Which KPIs matter most to you right
@@ -583,7 +618,7 @@
                             STAFF United team.</div>
                         <textarea name="revenue_benchmarks"
                             placeholder="Monthly revenue is roughly... Average order value is... Shopify conversion is around..."
-                            style="min-height:80px;"></textarea>
+                            style="min-height:80px;" required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What would make you feel like this partnership
@@ -593,7 +628,8 @@
                             day-to-day
                             when it's working?</div>
                         <textarea name="success_feeling"
-                            placeholder="I'd feel relieved knowing my digital presence is handled, and excited when I see studios saying yes..."></textarea>
+                            placeholder="I'd feel relieved knowing my digital presence is handled, and excited when I see studios saying yes..."
+                            required></textarea>
                     </div>
                 </div>
 
@@ -622,7 +658,7 @@
                             "it looks nice but they don't know who I am."</div>
                         <textarea name="website_current_feel"
                             placeholder="It looks pretty but I don't think they understand what the brand is really about..."
-                            style="min-height:80px;"></textarea>
+                            style="min-height:80px;" required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What should someone feel within 5 seconds of
@@ -630,7 +666,7 @@
                             your homepage?</label>
                         <textarea name="website_ideal_feel"
                             placeholder="Like they just walked into my Ottawa boutique — welcomed, curious, and already trusting the brand..."
-                            style="min-height:80px;"></textarea>
+                            style="min-height:80px;" required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What pages does your website currently
@@ -669,7 +705,8 @@
                             event
                             sign-ups, Pilates content — tell us more.</div>
                         <textarea name="website_new_pages"
-                            placeholder="I want a section that feels like a magazine where women can explore wellness..."></textarea>
+                            placeholder="I want a section that feels like a magazine where women can explore wellness..."
+                            required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">Do you have brand photography and video assets
@@ -741,7 +778,7 @@
                         <textarea name="customer_segments"
                             placeholder="1. The Pilates woman — she's already in the community
 2. The fashion-conscious woman — she finds me through style content
-3. The studio owner — B2B wholesale..."></textarea>
+3. The studio owner — B2B wholesale..." required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What is the one email you most wish your list
@@ -753,7 +790,8 @@
                             would it
                             say?</div>
                         <textarea name="dream_intro_email"
-                            placeholder="It would start with my story on Broadway, how I made the first wrap for myself, and why I believe every woman deserves to feel this way..."></textarea>
+                            placeholder="It would start with my story on Broadway, how I made the first wrap for myself, and why I believe every woman deserves to feel this way..."
+                            required></textarea>
                     </div>
                 </div>
 
@@ -807,7 +845,7 @@
                             often do you post, and what's the plan?</label>
                         <textarea name="ig_current_strategy"
                             placeholder="I post when I can — maybe 3-4 times a week on stories, 1-2 feed posts or Reels. There's no real system..."
-                            style="min-height:80px;"></textarea>
+                            style="min-height:80px;" required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What's the role of each Instagram account in
@@ -817,7 +855,8 @@
                             do you see
                             them working together or differently?</div>
                         <textarea name="ig_account_roles"
-                            placeholder="@iamstaceymartin is the heartbeat — my story, my voice. @staceymartinlifestyle is more product-focused but I haven't been using it much..."></textarea>
+                            placeholder="@iamstaceymartin is the heartbeat — my story, my voice. @staceymartinlifestyle is more product-focused but I haven't been using it much..."
+                            required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What do you want people to do after seeing
@@ -861,7 +900,8 @@
                             perfect studio
                             partner.</div>
                         <textarea name="ideal_studio"
-                            placeholder="A boutique Pilates or wellness studio, 50–300 members, women-led or female-dominant clientele, in Canada or major US cities..."></textarea>
+                            placeholder="A boutique Pilates or wellness studio, 50–300 members, women-led or female-dominant clientele, in Canada or major US cities..."
+                            required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What's your biggest concern about the B2B
@@ -898,7 +938,7 @@
                             happened?</label>
                         <textarea name="b2b_history"
                             placeholder="I've approached a few studios in Ottawa directly and they loved the product but I never had a formal system for follow-up..."
-                            style="min-height:80px;"></textarea>
+                            style="min-height:80px;" required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What objections do studio owners typically
@@ -906,7 +946,7 @@
                             you expect they'd give?</label>
                         <textarea name="b2b_objections"
                             placeholder="Price might be an issue, or they might want to see more social proof, or they might already carry another brand..."
-                            style="min-height:80px;"></textarea>
+                            style="min-height:80px;" required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">What is your production capacity for the
@@ -1017,7 +1057,8 @@
                             to you in 6
                             months?</label>
                         <textarea name="success_6mo"
-                            placeholder="I want to feel like my digital presence finally sounds like me, and I want to see the studios buying..."></textarea>
+                            placeholder="I want to feel like my digital presence finally sounds like me, and I want to see the studios buying..."
+                            required></textarea>
                     </div>
                     <div class="question">
                         <label class="question-label">Anything else you want STAFF United team to
@@ -1025,7 +1066,7 @@
                             begin?</label>
                         <textarea name="anything_else"
                             placeholder="Feel free to say anything here — no filter needed."
-                            style="min-height:80px;"></textarea>
+                            style="min-height:80px;" required></textarea>
                     </div>
                 </div>
 
@@ -1037,12 +1078,29 @@
                         directly to them, not a database. They'll come back to you with a custom
                         scope built
                         around exactly what you've shared here.</p>
-                    <button type="button" class="submit-btn" onclick="handleSubmit()">Send to STAFF
-                        United
-                        team →</button>
-                    <div class="submit-note">Your answers are confidential. We do not share client
-                        information
-                        with any third party.</div>
+                    <button
+                        type="button"
+                        class="submit-btn"
+                        onclick="handleSubmit()">
+                        Send to STAFF United Team →
+                    </button>
+                    <div id="success-message" style="display:none; margin-top:24px;">
+                        <div
+                            style="
+      padding: 24px;
+      border-radius: 16px;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: #065f46;
+    ">
+                            <h3 style="margin:0 0 8px;">Thank you!</h3>
+                            <p style="margin:0;">
+                                Your questionnaire has been submitted successfully. Our team will
+                                review
+                                your responses and get back to you shortly.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
             </form>

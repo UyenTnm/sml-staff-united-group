@@ -58,6 +58,10 @@ updatePriorityNumbers();
 
 /* submit */
 async function handleSubmit() {
+    if (!validateForm()) {
+        return;
+    }
+
     const form = document.getElementById('questionnaire');
     const btn = document.querySelector('.submit-btn');
 
@@ -95,7 +99,7 @@ async function handleSubmit() {
     btn.disabled = true;
 
     try {
-        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzbumZ2nCNNvsFKAd0QxhokoLbtqAGQAn_zNfphAiR47Mmi1TJ-nGOPHGsdqXX-M0cD5g/exec';
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzizhJtL-iTsSCpwBYY5ziijEXBsn6kjuJ_22WtjwrO9Q9-STydBFSD_8ofhlUXDMw4gA/exec';
 
         const res = await fetch(APPS_SCRIPT_URL, {
             method: 'POST',
@@ -116,6 +120,53 @@ async function handleSubmit() {
         btn.disabled = false;
         alert('There was a problem sending your answers. Please try again or contact info@staffunitedgroup.com.');
     }
+}
+
+function validateForm() {
+    const form = document.getElementById('questionnaire');
+
+    // Kiểm tra tất cả field có thuộc tính required
+    const requiredFields = form.querySelectorAll('[required]');
+
+    for (const field of requiredFields) {
+        const value = (field.value || '').trim();
+
+        if (!value) {
+            const label =
+                field.closest('.question')
+                    ?.querySelector('.question-label')
+                    ?.innerText.replace('*', '')
+                    .trim() || 'this field';
+
+            alert(`Please complete: ${label}`);
+            field.focus();
+            field.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+            return false;
+        }
+    }
+
+    // Kiểm tra email hợp lệ
+    const emailInput = form.querySelector('[name="email"]');
+
+    if (emailInput && emailInput.value.trim()) {
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            emailInput.focus();
+            emailInput.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+            return false;
+        }
+    }
+
+    return true;
 }
 
 /* init budget display */
