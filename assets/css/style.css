@@ -200,6 +200,7 @@ body {
   flex-shrink: 0;
   margin-top: 3px;
 }
+
 .section-title {
   font-family: "Cormorant Garamond", serif;
   font-size: 28px;
@@ -653,7 +654,7 @@ input[type="range"]::-webkit-slider-thumb {
 .inline-other-content .option-label {
   flex-shrink: 0;
   margin: 0;
-  font-weight: 500;
+  /* font-weight: 500; */
 }
 
 /* Input underline chiếm toàn bộ phần còn lại */
@@ -738,7 +739,7 @@ input[type="range"]::-webkit-slider-thumb {
 .inline-other-content .option-label {
   flex-shrink: 0;
   margin: 0;
-  font-weight: 500;
+  /* font-weight: 500; */
   line-height: 1.4;
 }
 
@@ -823,7 +824,7 @@ input[type="range"]::-webkit-slider-thumb {
 .inline-other-content .option-label {
   flex-shrink: 0;
   margin: 0;
-  font-weight: 500;
+  /* font-weight: 500; */
   line-height: 1;
 }
 
@@ -890,7 +891,7 @@ input[type="range"]::-webkit-slider-thumb {
 .option-item-other-inline .option-label {
   flex-shrink: 0;
   margin: 0;
-  font-weight: 500;
+  /* font-weight: 500; */
   line-height: 1;
 }
 
@@ -992,7 +993,7 @@ input[type="range"]::-webkit-slider-thumb {
   display: inline-block !important;
   flex-shrink: 0 !important;
   margin: 0 !important;
-  font-weight: 500 !important;
+  /* font-weight: 500 !important; */
   line-height: 1 !important;
   white-space: nowrap !important;
 }
@@ -1109,4 +1110,208 @@ input[type="range"]::-webkit-slider-thumb {
   width: 100% !important;
   min-width: 0 !important;
   margin: 0 !important;
+}
+
+/* =========================================
+   FIX B2B CONCERN - OTHER ALIGNMENT
+   Căn "Other:" nằm giữa theo trục Y với radio button
+   ========================================= */
+
+.option-item:has(#b2b-concern-other-radio) {
+  display: flex;
+  align-items: center !important; /* căn giữa theo chiều dọc */
+  gap: 10px;
+
+  min-height: 78px; /* bằng các card khác */
+}
+
+/* Container chứa "Other:" + input */
+.option-item:has(#b2b-concern-other-radio) .inline-other-content {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important; /* căn giữa theo trục Y */
+  gap: 12px;
+
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Label "Other:" */
+.option-item:has(#b2b-concern-other-radio) .option-label {
+  flex-shrink: 0;
+  margin: 0;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Input underline */
+.option-item:has(#b2b-concern-other-radio) .inline-other-input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+}
+
+/* =========================================
+   SECTION NUMBER - PERFECT CENTER
+   Thay thế TOÀN BỘ block .section-number hiện tại
+   trong file CSS của bạn (đang ở khoảng dòng 150). :contentReference[oaicite:0]{index=0}
+   ========================================= */
+
+.section-number {
+  /* Kích thước hình tròn */
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--navy);
+
+  /* Căn giữa tuyệt đối */
+  display: grid;
+  place-items: center;
+
+  /* Typography */
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--white);
+
+  /* Layout */
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+
+  /* Loại bỏ mọi ảnh hưởng của font */
+  text-align: center;
+  vertical-align: middle;
+
+  /* Dịch lên 1px để số nhìn cân đối hoàn hảo */
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   SECTION NUMBER - ABSOLUTE CENTER
+   Cách này ổn định nhất:
+   1. Ẩn text trực tiếp trong .section-number
+   2. Hiển thị số bằng pseudo-element
+   3. Lấy số từ data-number
+   ========================================= */
+
+.section-number {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--navy);
+
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+
+  /* Ẩn text gốc */
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Hiển thị số và căn giữa tuyệt đối */
+.section-number::before {
+  content: attr(data-number);
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--white);
+
+  /* Tinh chỉnh nhẹ cho font Cormorant Garamond */
+  transform: translateY(-4px);
+}
+
+/* =========================================
+   SECTION NUMBER — PERFECTLY CENTERED
+   Replace your existing .section-number block.
+   This ensures every number (1, 2, 6, 8, 10, etc.)
+   is centered exactly on both X and Y axes.
+   ========================================= */
+
+.section-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+
+  /* Use a numerically balanced font */
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+
+  /* Perfect centering */
+  display: grid;
+  place-items: center;
+
+  /* Reset all offsets */
+  line-height: 1;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  transform: none;
+
+  /* Layout */
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   SECTION NUMBER — FIX OVERLAPPING DIGITS
+   Use flex instead of grid to avoid double rendering
+   and ensure perfect centering.
+   ========================================= */
+
+.section-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+
+  /* Use stable numeric font */
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+
+  /* Perfect centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Reset all spacing */
+  line-height: 1;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+  /* Prevent shrinking */
+  flex-shrink: 0;
+  box-sizing: border-box;
+
+  /* Remove inherited transforms */
+  transform: none;
+}
+
+/* Remove any pseudo-elements that may duplicate numbers */
+.section-number::before,
+.section-number::after {
+  content: none !important;
 }
